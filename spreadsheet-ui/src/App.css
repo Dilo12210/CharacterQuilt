@@ -1,0 +1,221 @@
+.App {
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Spreadsheet Styles */
+.spreadsheet-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 1200px;
+  overflow-x: auto;
+}
+
+.spreadsheet-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.spreadsheet-table th {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: white;
+  padding: 15px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.spreadsheet-table td {
+  padding: 0;
+  border: 1px solid #e5e7eb;
+  background: white;
+}
+
+.spreadsheet-input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+  transition: background-color 0.2s ease;
+}
+
+.spreadsheet-input:focus {
+  background: #f3f4f6;
+  box-shadow: inset 0 0 0 2px #4f46e5;
+}
+
+.spreadsheet-input:hover {
+  background: #f9fafb;
+}
+
+.spreadsheet-actions {
+  margin-top: 25px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.spreadsheet-actions button {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.spreadsheet-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+}
+
+.spreadsheet-actions button:active {
+  transform: translateY(0);
+}
+
+h1 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .spreadsheet-container {
+    margin: 10px;
+    padding: 15px;
+  }
+  
+  .spreadsheet-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .spreadsheet-actions button {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Dark Mode Styles */
+.App.dark-mode {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+}
+
+.App.dark-mode h1 {
+  color: #f9fafb;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.spreadsheet-container.dark-mode {
+  background: #1f2937;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.spreadsheet-table.dark-mode {
+  background: #1f2937;
+}
+
+.spreadsheet-table.dark-mode th {
+  background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+  color: #f9fafb;
+}
+
+.spreadsheet-table.dark-mode td {
+  border: 1px solid #374151;
+  background: #1f2937;
+}
+
+.spreadsheet-input.dark-mode {
+  background: #1f2937;
+  color: #f9fafb;
+}
+
+.spreadsheet-input.dark-mode:focus {
+  background: #374151;
+  box-shadow: inset 0 0 0 2px #60a5fa;
+}
+
+.spreadsheet-input.dark-mode:hover {
+  background: #374151;
+}
+
+.spreadsheet-actions.dark-mode button {
+  background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+  color: #f9fafb;
+}
+
+.spreadsheet-actions.dark-mode button:hover {
+  background: linear-gradient(135deg, #4b5563 0%, #6b7280 100%);
+}
+
+/* Drag and Drop Styles */
+.spreadsheet-table th[draggable="true"]:active,
+.spreadsheet-table tr[draggable="true"]:active {
+  cursor: grabbing;
+}
